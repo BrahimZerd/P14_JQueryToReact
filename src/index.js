@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import CreateEmployee from './pages/CreateEmployee';
+import EmployeeList from './pages/employeeList'
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
@@ -17,6 +18,7 @@ root.render(
       <Router >
     <Routes>
         <Route path="/" element={<CreateEmployee />} />
+        <Route path="/employee-list" element={<EmployeeList />} />
         
       
       </Routes>

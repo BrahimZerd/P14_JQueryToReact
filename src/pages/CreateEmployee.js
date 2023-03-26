@@ -1,16 +1,15 @@
 import React from 'react';
-import logo from '../logo.svg';
+import HeaderCEmployee from '../components/headerCreateEmployee';
+import Form from '../components/formCreateEmployee';
 import '../App.css';
 
-function App() {
+function CreateEmployee() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       
-      </header>
+      <HeaderCEmployee />
+      <Form />
     </div>
   );
 }
 
-export default App;
+export default CreateEmployee;
