@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import data from '../../assets/data.json'
 
 
 const initialState = {
@@ -20,6 +19,7 @@ const initialState = {
 export const createEmployee = createAsyncThunk('createuser',
 async(arg) => {
     //a travailler sur le push dans le JSON // fichier Mock ???
+    console.log(arg)
     return arg
     
 }

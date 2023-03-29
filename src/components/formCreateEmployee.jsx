@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getAsyncData} from '../features/employees/getEmployees';
+import getDataAPI from '../services/getEmployeeAPI';
 import { useDispatch } from 'react-redux';
 import {createEmployee} from '../features/employees/createEmployees';
 
@@ -21,7 +21,8 @@ function Form() {
         
 
     }
-    
+
+      
 
   
 
