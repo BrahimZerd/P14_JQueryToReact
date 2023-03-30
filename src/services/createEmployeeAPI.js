@@ -3,17 +3,29 @@
 
 
 async function createEmployeeAPI(newEmployee) {
-
+    
+    const obj = JSON.parse(newEmployee, (key, value) => {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        return value;
+      }
+    });
+    
         const response = await fetch('/data.json', 
         {
             method: "POST",
-            body: JSON.stringify(newEmployee)
+            header: {
+                'Accept':'application/json',
+                'Content-Type': 'application/json'
+
+            },
+            body: obj
         })
 
-        .then(response => response.json())
-        .then(response => console.log(response))
+        const result = await response.json()
 
-        console.log(response)
+        console.log(result)
 
 
 }

@@ -15,7 +15,7 @@ function Form() {
         const lastName = document.getElementById('last-name').value;
         const birthDate = document.getElementById('date-of-birth').value
       dispatch(createEmployee({firstName, lastName, birthDate}))
-      .then(response => console.log(response))
+      .then(response => (response))
       
       
         

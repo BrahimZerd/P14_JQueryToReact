@@ -1,22 +1,40 @@
 
 
+const initialState = {}
 
 
-
- async function getDataAPI() {
+export  async function getDataAPI() {
     
          
           
-      try {
-        const response = await fetch('data.json')
-        if(response.status === 200) {
-            return response
-        }
+     
+        const promise =  await fetch('data.json')
+        .then(result => {
+          if (result.status === 200){
+            return result
+          } else {
+            throw result
+          }
+          
+        },
+        
+        )
+        return promise
+
 
         
-      } catch (error) { 
+
+        
+         
+
+
+         
+         
+         
+
+       
+        
       
-      throw error}
         
         
              
@@ -26,5 +44,5 @@
 }
 
 
-export default getDataAPI;
+
 

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
+import createEmployeeAPI from '../../services/createEmployeeAPI';
 
 const initialState = {
     id:"",
@@ -20,7 +20,8 @@ export const createEmployee = createAsyncThunk('createuser',
 async(arg) => {
     //a travailler sur le push dans le JSON // fichier Mock ???
     console.log(arg)
-    return arg
+    createEmployeeAPI(arg)
+    
     
 }
 )  
@@ -29,16 +30,10 @@ async(arg) => {
     initialState,
     extraReducers:{
         [createEmployee.fulfilled]: (state,action) => {
+           console.log(action)
+           state.firstName =action.meta.arg.firstName
+           state.lastName = action.meta.arg.lastName
            
-           state.firstName =action.payload.firstName
-           state.lastName = action.payload.lastName
-           state.dateOfBirth = action.payload.dateOfBirth
-           state.startDate = action.payload.startDate
-           state.department = action.payload.department
-           state.street = action.payload.street
-           state.city = action.payload.city
-           state.state = action.payload.state
-           state.zipCode = action.payload.zipCode
 
            
            
