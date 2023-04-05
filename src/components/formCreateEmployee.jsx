@@ -1,21 +1,27 @@
 import { useSelector } from 'react-redux';
-import getDataAPI from '../services/getEmployeeAPI';
 import { useDispatch } from 'react-redux';
-import {createEmployee} from '../features/employees/createEmployees';
+import {createEmployee} from '../features/employees/getEmployees';
+import Picker from '../features/datepicker/datePicker';
+import DropDownStates from '../features/dropdown/dropdownStates';
+import DropDownDepartment from '../features/dropdown/dropdownDepartment';
 
 function Form() {
 
     const dispatch = useDispatch()
+    const data = useSelector((state) => state.data)
     
 
     function submitEmployee(e) {
        e.preventDefault()
-        
+        console.log(data)
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
         const birthDate = document.getElementById('date-of-birth').value
       dispatch(createEmployee({firstName, lastName, birthDate}))
-      .then(response => (response))
+      
+     
+      
+      
       
       
         
@@ -38,11 +44,13 @@ function Form() {
     <input type="text" id="last-name" />
 
     <label htmlFor="date-of-birth">Date of Birth</label>
-    <input id="date-of-birth" type="text" ></input >
+    <Picker id="birthDate"/>
+    
 
     <label htmlFor="start-date">Start Date</label>
-    <input id="start-date" type="text" >
-        </input >
+    <Picker id="startDate"/>
+    <label htmlFor="department">Department</label>
+    <DropDownDepartment />
     
     <fieldset className="address" style={{display: "flex", flexDirection:"column"}}>
                     <legend>Address</legend>
@@ -54,7 +62,7 @@ function Form() {
                     <input id="city" type="text" />
 
                     <label htmlFor="state">State</label>
-                    <select name="state" id="state"></select>
+                    <DropDownStates />
 
                     <label htmlFor="zip-code">Zip Code</label>
                     <input id="zip-code" type="number" />

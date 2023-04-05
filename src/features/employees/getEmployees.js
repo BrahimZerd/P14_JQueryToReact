@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
 import { getDataAPI } from '../../services/getEmployeeAPI';
+import createEmployeeAPI from '../../services/createEmployeeAPI';
 const initialState = {
   user : []
 }
@@ -10,31 +10,29 @@ const initialState = {
 export const getAsyncData = createAsyncThunk("getData",
 async () => {
   
-     const lol = await getDataAPI()
+     const result = await getDataAPI()
      .then(response =>response.json())
      .then(response => (response))
 
-   return lol
+   return result
      
     
+})
+export const createEmployee = createAsyncThunk('createuser',
+async(arg) => {
+    //a travailler sur le push dans le JSON // fichier Mock ???
+    //creation d'un push object dans le json using fetch
+   createEmployeeAPI(arg)
    
+   
+    
+
 
     
- 
+    
+}
+)
 
-  
- 
-  
-  
-
-  
-  
- 
-  
-  
-
-  
-  })
 
 const dataSlice = createSlice({
   name: "getData",
@@ -44,8 +42,11 @@ const dataSlice = createSlice({
     
       [getAsyncData.fulfilled]: (state, action) => {
         state.user = action.payload
+        console.log(state.user)
      },
-     
+      [createEmployee.fulfilled]:(state, action) => {
+      
+     }
     
     }
       

@@ -1,32 +1,28 @@
 
 
 
-
 async function createEmployeeAPI(newEmployee) {
+  
+  const promise =  await fetch('data.json')
+  
+  .then(result => {
+    if (result.status === 200){
     
-    const obj = JSON.parse(newEmployee, (key, value) => {
-      try {
-        return JSON.parse(value);
-      } catch (e) {
-        return value;
-      }
-    });
+      return result
+    } else {
+      throw result
+    }
     
-        const response = await fetch('/data.json', 
-        {
-            method: "POST",
-            header: {
-                'Accept':'application/json',
-                'Content-Type': 'application/json'
-
-            },
-            body: obj
-        })
-
-        const result = await response.json()
-
-        console.log(result)
-
+  },
+  
+  )
+  
+  .then(result =>result.json())
+  .then(result => {
+    result.push(newEmployee)
+      console.log(result)
+  })
+  
 
 }
 
