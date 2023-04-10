@@ -1,34 +1,44 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {createEmployee} from '../features/employees/getEmployees';
-import Picker from '../features/datepicker/datePicker';
+import {createEmployee} from '../features/employees/createEmployee';
+import Picker from '../features/datepicker/datePickerBirthDate';
+import PickerStartDate from '../features/datepicker/datePickerStartDate';
 import DropDownStates from '../features/dropdown/dropdownStates';
 import DropDownDepartment from '../features/dropdown/dropdownDepartment';
+import Modal from '../features/modal/Modal';
 
 function Form() {
 
     const dispatch = useDispatch()
     const data = useSelector((state) => state.data)
-    
+    //faire la validation formulaire Regex !!!!
 
     function submitEmployee(e) {
        e.preventDefault()
         console.log(data)
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
-        const birthDate = document.getElementById('date-of-birth').value
-      dispatch(createEmployee({firstName, lastName, birthDate}))
+        const birthDate = document.getElementById('birthDate').value
+        const startDate = document.getElementById('startDate').value
+        const street = document.getElementById('street').value
+        const states = document.getElementsByClassName('states').value
+
+
+        console.log(states,street)
+
+      
+      dispatch(createEmployee({ firstName,lastName,birthDate,startDate,street,states}))
+      
       
      
       
-      
-      
+
       
         
 
     }
 
-      
+      console.log(data)
 
   
 
@@ -44,13 +54,13 @@ function Form() {
     <input type="text" id="last-name" />
 
     <label htmlFor="date-of-birth">Date of Birth</label>
-    <Picker id="birthDate"/>
+    <Picker />
     
 
     <label htmlFor="start-date">Start Date</label>
-    <Picker id="startDate"/>
+    <PickerStartDate />
     <label htmlFor="department">Department</label>
-    <DropDownDepartment />
+    <DropDownDepartment className="department" />
     
     <fieldset className="address" style={{display: "flex", flexDirection:"column"}}>
                     <legend>Address</legend>
@@ -68,6 +78,8 @@ function Form() {
                     <input id="zip-code" type="number" />
                 </fieldset>
                 <button onClick={submitEmployee} >Create Employee</button>
+                <Modal
+                 />
     </form>
         
     </div>     

@@ -1,11 +1,27 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import dataReducer from '../features/employees/getEmployees'
+import {configureStore} from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage'
+import {combineReducers} from "redux"; 
+import { persistReducer } from 'redux-persist'
+import thunk from 'redux-thunk'
+import createEmployee from '../features/employees/createEmployee';
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    data: dataReducer,
-
-  },
+const reducers = combineReducers({
+ //...     
+ data: createEmployee,       
 });
+
+const persistConfig = {
+    key: 'root',
+    storage
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+
+const store = configureStore({
+    reducer: persistedReducer,
+    devTools: process.env.NODE_ENV !== 'production',
+    middleware: [thunk]
+});
+
+export default store;

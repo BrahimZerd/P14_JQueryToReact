@@ -1,22 +1,13 @@
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Table from "rc-table";
 
-import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import { getAsyncData } from "../features/employees/getEmployees";
 
 
 
 function Display() {
-    const dispatch = useDispatch()
-    const data = useSelector((state) => state.data.user)
+    const data = useSelector((state) => state.data)
 
-      useEffect(() => {
-      dispatch(getAsyncData())
-      .then(response => console.log(response))
-      
-    },[])
+    
     const columns = [
         {
           title: "First Name",
@@ -82,6 +73,7 @@ function Display() {
       columns={columns}
       data={data}
       tableLayout="auto"
+      rowKey={data => data.key}
     />
       </div>
     );

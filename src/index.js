@@ -1,13 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import  store  from './app/store';
 import CreateEmployee from './pages/CreateEmployee';
 import EmployeeList from './pages/employeeList'
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
 
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+let persistor = persistStore(store);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -15,6 +18,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
       <Router >
     <Routes>
         <Route path="/" element={<CreateEmployee />} />
@@ -23,7 +27,10 @@ root.render(
       
       </Routes>
       </Router>
+      </PersistGate>
+
     </Provider>
+
   </React.StrictMode>
 );
 

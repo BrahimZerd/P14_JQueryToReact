@@ -12,7 +12,7 @@ const defaultOption = dataDepartments[0];
 
 return(
 
-<Dropdown options={dataDepartments}  value={defaultOption} placeholder="Select an option" />)
+<Dropdown id="departments" options={dataDepartments}  value={defaultOption} placeholder="Select an option" />)
 
 
 

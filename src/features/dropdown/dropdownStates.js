@@ -11,7 +11,7 @@ const defaultOption = dropdownData;
 
 return(
 
-<Dropdown options={dropdownData} value={defaultOption} placeholder="Select an option" />)
+<Dropdown className="states" options={dropdownData} value={defaultOption} placeholder="Select an option" />)
 
 
 
