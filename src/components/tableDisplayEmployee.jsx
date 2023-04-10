@@ -29,13 +29,13 @@ function Display() {
         },
         {
             title: "Department",
-            dataIndex: 'department',
-            key: "department",
+            dataIndex: 'departments',
+            key: "departments",
             width: 100,
         },
         {
             title: "Date of Birth",
-            dataIndex: 'dateOfBirth',
+            dataIndex: 'birthDate',
             key: "dateOfBirth",
             width: 200,
         },
@@ -53,12 +53,12 @@ function Display() {
         },
         {
             title: "State",
-            dataIndex: 'state',
+            dataIndex: 'states',
             key: "state",
             width: 100,
         },{
             title: "Zip Code",
-            dataIndex: 'zipCode',
+            dataIndex: 'zipcode',
             key: "zipCode",
             width: 200,
         },

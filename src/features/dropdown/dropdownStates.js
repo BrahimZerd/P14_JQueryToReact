@@ -9,9 +9,10 @@ function dropDownStates () {
     
 const defaultOption = dropdownData;
 
+
 return(
 
-<Dropdown className="states" options={dropdownData} value={defaultOption} placeholder="Select an option" />)
+<Dropdown className="states" options={dropdownData}  value={defaultOption} placeholder="Select an option" />)
 
 
 

@@ -3,7 +3,6 @@ import { useState } from "react";
 
 
 function Modal (Element) {
-    let subtitle;
     const [modalIsOpen, setIsOpen] = useState(true);
   
      function openModal() {

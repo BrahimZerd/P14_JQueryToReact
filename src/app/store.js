@@ -4,10 +4,12 @@ import {combineReducers} from "redux";
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk'
 import createEmployee from '../features/employees/createEmployee';
+import checkForm from '../features/form/formValidation'
 
 const reducers = combineReducers({
  //...     
- data: createEmployee,       
+ data: createEmployee,
+ form: checkForm,
 });
 
 const persistConfig = {
