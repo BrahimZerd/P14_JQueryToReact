@@ -1,11 +1,16 @@
 import { useSelector } from "react-redux";
 import Table from "rc-table";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 
 
 
 function Display() {
-    const data = useSelector((state) => state.data)
+    
+const data = useSelector((state) => state.data)
+
+
 
     
     const columns = [
@@ -64,10 +69,7 @@ function Display() {
         },
        
       ];
-   
-    console.log(data)
-    
-    return (
+   return (
       <div className="containers">
         <Table
       columns={columns}

@@ -1,38 +1,17 @@
-import { useState } from "react";
 
 
 
-function Modal (Element) {
-    const [modalIsOpen, setIsOpen] = useState(true);
-  
-     function openModal() {
-      setIsOpen(false);
-      
-    }
-   function SetModal () {
-    return( 
-        <button onClick={openModal}>Ouvrir</button>
-    )
-   }
+function Modal ({className,text,close}) {
+   
     
-  
-    function closeModal() {
-      setIsOpen(true);
-    }
-
-     Element = () =>  {
-        setIsOpen(false)
-    }
     
     return (
         
-        modalIsOpen ? 
-        <div className='Modal'>
-           <SetModal />
-            </div>: 
-        <div className='ModalOpen'>
-            <span>Employee Successfully</span>
-            <button onClick={closeModal}>Close Modal</button>
+        
+        
+        <div className={className}>
+            <span>{text}</span>
+            <button onClick={close}>Close Modal</button>
         </div>
         
        

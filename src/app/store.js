@@ -1,29 +1,21 @@
 import {configureStore} from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage'
 import {combineReducers} from "redux"; 
-import { persistReducer } from 'redux-persist'
-import thunk from 'redux-thunk'
-import createEmployee from '../features/employees/createEmployee';
+import Employee from '../features/employees/Employee.js';
 import checkForm from '../features/form/formValidation'
 
-const reducers = combineReducers({
+const reducer = combineReducers({
  //...     
- data: createEmployee,
+ data: Employee,
  form: checkForm,
 });
 
-const persistConfig = {
-    key: 'root',
-    storage
-};
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+
 
 
 const store = configureStore({
-    reducer: persistedReducer,
-    devTools: process.env.NODE_ENV !== 'production',
-    middleware: [thunk]
+    reducer,
+
 });
 
 export default store;

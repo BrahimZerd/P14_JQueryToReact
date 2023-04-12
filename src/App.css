@@ -16,10 +16,18 @@ body{
 .container {
   background-color: rgb(229, 250, 255);
   border-radius: 15px;
-  width: 450px;
-  margin: 0 auto;
+  margin-left:150px;
+  
 }
-
+.modal {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 55px;
+  border: solid 1px black;
+  border-radius: 5px;
+  color: teal;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 input {
   margin-top: 15px;
   background-color: rgb(218, 208, 208);
@@ -33,13 +41,33 @@ a:hover {
   padding: 5px;
   box-shadow: 4px  2px teal;
 }
-
+.logo {
+  display: flex;
+  color: teal;
+  font-style:oblique;
+  justify-content:space-between;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+img {
+  width: 150px;
+  
+}
 a {
   color: black;
   text-decoration: none;
 }
 
-button {
+.formulaireDiv{
+  background-color: rgb(36, 160, 160);
+  display: flex;
+  border-radius: 5%;
+  
+  margin: 0 auto;
+}
+
+button
+{
   color: teal;
   border-radius: 25px;
   border: solid 1px;
@@ -49,6 +77,12 @@ button {
   box-shadow: 4px  2px teal;
 
 }
+.list {
+  margin-top: 5vh;
+  position: absolute;
+  right: 5%;
+}
+
 
 button:hover {
   cursor: pointer;

@@ -7,12 +7,12 @@ export const createData = createSlice({
     name: "createData",
     initialState: [],
     reducers : {
-    getEmployees: (state, action) => {
-        state = action.payload
-      }
-    ,
+    
     addEmployee : (state, action) => {
-      state.push(action.payload);
+      state.push(action.payload)
+      console.log(JSON.stringify(state))
+     
+      
       
     }}
 })
@@ -22,7 +22,9 @@ export const createEmployee = (arg) => async dispatch => {
   
 }
 
-export const {getEmployees, addEmployee} = createData.actions;
+
+
+export const {addEmployee} = createData.actions;
 
 
 
