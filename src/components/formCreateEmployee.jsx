@@ -8,7 +8,7 @@ import DropDownDepartment from '../features/dropdown/dropdownDepartment';
 import Modal from '../features/modal/Modal';
 
 
-function Form() {
+function Form({onClk}) {
     
     const dispatch = useDispatch()
     const [modalOpen, SetModal] = useState(false)
@@ -16,7 +16,9 @@ function Form() {
     //faire la validation formulaire Regex !!!!
     
     function closeModal() {
-      SetModal(false);
+      
+      const root = document.getElementById('root');
+    root.style.opacity = '1'
     }
     
     const submitEmployee = (e) => {
@@ -35,19 +37,14 @@ function Form() {
     //  validateForm(firstName,lastName,birthDate,zipcode, states)
     dispatch(createEmployee({ firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
     //open the Modal
-    SetModal(true)
+   
+    
   }
 
    
   
   return(
-    modalOpen ? 
-      <div>
-        <Modal
-        className={'modal'}
-        text={"Employee Successfully Created !"}
-        close={closeModal}/>
-      </div> :
+    
       <div className='formulaireDiv'>
         <form action="#" id="create-employee"  style={{display: "flex", flexDirection:"column",width:"200px",margin:"0 auto"}}>
          
@@ -81,7 +78,7 @@ function Form() {
                     <label htmlFor="zip-code">Zip Code</label>
                     <input id="zip-code" type="number" /*required*//>
             </fieldset>
-        <button onClick={submitEmployee} >Create Employee</button>
+        <button id="submit" onClick={onClk} >Create Employee</button>
                 
     </form>
         

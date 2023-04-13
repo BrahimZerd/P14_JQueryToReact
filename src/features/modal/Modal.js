@@ -1,19 +1,19 @@
 
 
 
-function Modal ({className,text,close}) {
+function Modal ({className,style,text,close}) {
    
-    
     
     return (
         
         
-        
-        <div className={className}>
+        <div id="modalOverlay" style={{display:"none"}}>
+        <div className={className} style={style}id="modal">
             <span>{text}</span>
-            <button onClick={close}>Close Modal</button>
+            <button onClick={close}>Close</button>
         </div>
         
+        </div>
        
     )
 

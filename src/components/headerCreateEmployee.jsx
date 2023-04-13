@@ -4,7 +4,7 @@ import Wealth from '../assets/wealth.png'
 
 function HeaderCEmployee() {
     return(
-    <div className='logo'>
+    <div className='logo' id="header">
         
         <img src={Wealth} alt='logo' />
         
