@@ -2,9 +2,8 @@ import React from 'react';
 import HeaderCEmployee from '../components/headerCreateEmployee';
 import Form from '../components/formCreateEmployee';
 import '../App.css';
-import Modal from '../features/modal/Modal';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux'
+import Modal from 'modal-weather/dist/components/modal'
 import { useState } from 'react';
 import {createEmployee} from '../features/employees/Employee';
 
@@ -26,7 +25,7 @@ function CreateEmployee() {
     const zipcode = document.getElementById('zip-code').value;
     const city= document.getElementById('city').value;
     const departments = document.getElementsByClassName('Dropdown-root departments')[0].innerText;
-    dispatch(createEmployee({ firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
+    dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
 
 
     SetModal(true)

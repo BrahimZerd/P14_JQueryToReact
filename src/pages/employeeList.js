@@ -1,7 +1,15 @@
 import React from 'react';
 import TableDisplayEmployee from '../components/tableDisplayEmployee'
+import { getEmploye } from '../features/employees/Employee';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function employeeList() {
+function EmployeeList() {
+  const dispatch = useDispatch();
+  const data = useSelector((state)=> state.data)
+  console.log(data)
+  
+ 
   return (
     <div className="List">
       <TableDisplayEmployee />
@@ -10,4 +18,4 @@ function employeeList() {
   );
 }
 
-export default employeeList;
+export default EmployeeList;

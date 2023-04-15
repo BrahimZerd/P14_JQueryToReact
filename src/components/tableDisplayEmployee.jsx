@@ -1,44 +1,286 @@
 import { useSelector } from "react-redux";
 import Table from "rc-table";
-
+import { useDispatch } from "react-redux";
+import  {getEmploye}  from "../features/employees/Employee";
+import { getTotalEmployees } from "../features/employees/Employee";
+import { useEffect } from "react";
+import Logo from '../assets/wealth.png'
 
 
 
 
 function Display() {
     
-const data = useSelector((state) => state.data)
 
+
+const dispatch = useDispatch();
+
+
+ 
+
+
+
+ console.log()
+
+
+
+ const data = [
+     { 
+         firstName : 'John Doe' , 
+         departments : 'Developer' , 
+        city : 'San Francisco' ,
+       } , 
+       { 
+         firstName : 'Jane Doe' , 
+         departments : 'Designer' , 
+         city : 'Los Angeles' 
+       } ,
+       { 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,{ 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,{ 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,{ 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,{ 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,{ 
+        firstName : 'John Doe' , 
+        departments : 'Developer' , 
+       city : 'San Francisco' ,
+      } , 
+      { 
+        firstName : 'Jane Doe' , 
+        departments : 'Designer' , 
+        city : 'Los Angeles' 
+      } ,
+      { 
+       firstName : 'John Doe' , 
+       departments : 'Developer' , 
+      city : 'San Francisco' ,
+     } , 
+     { 
+       firstName : 'Jane Doe' , 
+       departments : 'Designer' , 
+       city : 'Los Angeles' 
+     } ,{ 
+       firstName : 'John Doe' , 
+       departments : 'Developer' , 
+      city : 'San Francisco' ,
+     } , 
+     { 
+       firstName : 'Jane Doe' , 
+       departments : 'Designer' , 
+       city : 'Los Angeles' 
+     } ,{ 
+       firstName : 'John Doe' , 
+       departments : 'Developer' , 
+      city : 'San Francisco' ,
+     } , 
+     { 
+       firstName : 'Jane Doe' , 
+       departments : 'Designer' , 
+       city : 'Los Angeles' 
+     } ,{ 
+       firstName : 'John Doe' , 
+       departments : 'Developer' , 
+      city : 'San Francisco' ,
+     } , 
+     { 
+       firstName : 'Jane Doe' , 
+       departments : 'Designer' , 
+       city : 'Los Angeles' 
+     } ,{ 
+       firstName : 'John Doe' , 
+       departments : 'Developer' , 
+      city : 'San Francisco' ,
+     } , 
+     { 
+       firstName : 'Jane Doe' , 
+       departments : 'Designer' , 
+       city : 'Los Angeles' 
+     } ,{ 
+      firstName : 'John Doe' , 
+      departments : 'Developer' , 
+     city : 'San Francisco' ,
+    } , 
+    { 
+      firstName : 'Jane Doe' , 
+      departments : 'Designer' , 
+      city : 'Los Angeles' 
+    } ,
+    { 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,{ 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,{ 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,{ 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,{ 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,{ 
+    firstName : 'John Doe' , 
+    departments : 'Developer' , 
+   city : 'San Francisco' ,
+  } , 
+  { 
+    firstName : 'Jane Doe' , 
+    departments : 'Designer' , 
+    city : 'Los Angeles' 
+  } ,
+  { 
+   firstName : 'John Doe' , 
+   departments : 'Developer' , 
+  city : 'San Francisco' ,
+ } , 
+ { 
+   firstName : 'Jane Doe' , 
+   departments : 'Designer' , 
+   city : 'Los Angeles' 
+ } ,{ 
+   firstName : 'John Doe' , 
+   departments : 'Developer' , 
+  city : 'San Francisco' ,
+ } , 
+ { 
+   firstName : 'Jane Doe' , 
+   departments : 'Designer' , 
+   city : 'Los Angeles' 
+ } ,{ 
+   firstName : 'John Doe' , 
+   departments : 'Developer' , 
+  city : 'San Francisco' ,
+ } , 
+ { 
+   firstName : 'Jane Doe' , 
+   departments : 'Designer' , 
+   city : 'Los Angeles' 
+ } ,{ 
+   firstName : 'John Doe' , 
+   departments : 'Developer' , 
+  city : 'San Francisco' ,
+ } , 
+ { 
+   firstName : 'Jane Doe' , 
+   departments : 'Designer' , 
+   city : 'Los Angeles' 
+ } ,{ 
+   firstName : 'John Doe' , 
+   departments : 'Developer' , 
+  city : 'San Francisco' ,
+ } , 
+ { 
+   firstName : 'Jane Doe' , 
+   departments : 'Designer' , 
+   city : 'Los Angeles' 
+ } ,
+
+ ]
+  
+ console.log(data)
+  
 
 
     
     const columns = [
         {
-          title: "First Name",
+          title: "first name",
           dataIndex: "firstName",
           key: "firstName",
           width: 200,
         },
         {
-            title: "Last Name",
+            title: "last name",
             dataIndex: 'lastName',
             key: "lastName",
             width: 200,
         },
         {
-            title: "Start Date",
+            title: "start date",
             dataIndex: 'startDate',
             key: "startDate",
             width: 200,
         },
         {
-            title: "Department",
+            title: "department",
             dataIndex: 'departments',
             key: "departments",
             width: 100,
         },
         {
-            title: "Date of Birth",
+            title: "birthdate",
             dataIndex: 'birthDate',
             key: "dateOfBirth",
             width: 200,
@@ -56,12 +298,12 @@ const data = useSelector((state) => state.data)
             width: 200,
         },
         {
-            title: "State",
+            title: "state",
             dataIndex: 'states',
-            key: "state",
+            key: "states",
             width: 100,
         },{
-            title: "Zip Code",
+            title: "zip Code",
             dataIndex: 'zipcode',
             key: "zipCode",
             width: 200,
@@ -70,12 +312,16 @@ const data = useSelector((state) => state.data)
       ];
    return (
       <div className="containers">
+        <img src={Logo} alt="logo" style={{ borderRadius: "50%", height: "155px", width:'155px',objectFit:'fit', paddingLeft: '5px', }}/>
         <Table
       columns={columns}
       data={data}
       tableLayout="auto"
-      rowKey={data => data.key}
+      
     />
+    <div>
+     
+    </div>
       </div>
     );
   };

@@ -3,7 +3,7 @@ import 'react-dropdown/style.css';
 import dropdownData from '../../assets/dropdownData';
 
 
-function dropDownStates () {
+function dropDownstates () {
 
 
     
@@ -19,4 +19,4 @@ return(
 }
 
 
-export default dropDownStates;
+export default dropDownstates;

@@ -40,7 +40,7 @@ const dropdownData = [
         value: 'DC',
     },
     {
-        label: 'Federated States Of Micronesia',
+        label: 'Federated statess Of Micronesia',
         value: 'FM',
     },
     {

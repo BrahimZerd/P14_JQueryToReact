@@ -1,16 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-
+import getApi from '../../service/API';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
 export const createData = createSlice({
     name: "createData",
-    initialState: [],
+    initialState: [
+     
+    ],
     reducers : {
-    
+   
     addEmployee : (state, action) => {
       state.push(action.payload)
-      console.log(JSON.stringify(state))
      
       
       

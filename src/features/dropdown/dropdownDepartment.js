@@ -2,19 +2,19 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 
-function dropDownDepartment () {
+function dropDowndepartment () {
 
-    const dataDepartments = ['Marketing', 'Engineering', 'Human Resources', 'Legal'];    
+    const datadepartments = ['Marketing', 'Engineering', 'Human Resources', 'Legal'];    
     
-const defaultOption = dataDepartments[0];
+const defaultOption = datadepartments[0];
 
 return(
 
-<Dropdown className="departments" options={dataDepartments}  value={defaultOption} placeholder="Select an option" />)
+<Dropdown className="departments" options={datadepartments}  value={defaultOption} placeholder="Select an option" />)
 
 
 
 }
 
 
-export default dropDownDepartment;
+export default dropDowndepartment;
