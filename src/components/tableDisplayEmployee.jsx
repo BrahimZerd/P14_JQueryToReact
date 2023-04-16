@@ -1,141 +1,16 @@
-import { useSelector } from "react-redux";
 import Table from "rc-table";
 import { useDispatch } from "react-redux";
-import  {getEmploye}  from "../features/employees/Employee";
-import { getTotalEmployees } from "../features/employees/Employee";
-import { useEffect } from "react";
+
 import Logo from '../assets/wealth.png'
+import { render } from 'react-dom';
+import React from 'react';
+import { TablePagination } from 'react-pagination-table';
 
 
 
 
-function Display() {
-    
-
-
-const dispatch = useDispatch();
-
-
- 
-
-
-
- console.log()
-
-
-
- const data = [
-     { 
-         firstName : 'John Doe' , 
-         departments : 'Developer' , 
-        city : 'San Francisco' ,
-       } , 
-       { 
-         firstName : 'Jane Doe' , 
-         departments : 'Designer' , 
-         city : 'Los Angeles' 
-       } ,
-       { 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,{ 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,{ 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,{ 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,{ 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,{ 
-        firstName : 'John Doe' , 
-        departments : 'Developer' , 
-       city : 'San Francisco' ,
-      } , 
-      { 
-        firstName : 'Jane Doe' , 
-        departments : 'Designer' , 
-        city : 'Los Angeles' 
-      } ,
-      { 
-       firstName : 'John Doe' , 
-       departments : 'Developer' , 
-      city : 'San Francisco' ,
-     } , 
-     { 
-       firstName : 'Jane Doe' , 
-       departments : 'Designer' , 
-       city : 'Los Angeles' 
-     } ,{ 
-       firstName : 'John Doe' , 
-       departments : 'Developer' , 
-      city : 'San Francisco' ,
-     } , 
-     { 
-       firstName : 'Jane Doe' , 
-       departments : 'Designer' , 
-       city : 'Los Angeles' 
-     } ,{ 
-       firstName : 'John Doe' , 
-       departments : 'Developer' , 
-      city : 'San Francisco' ,
-     } , 
-     { 
-       firstName : 'Jane Doe' , 
-       departments : 'Designer' , 
-       city : 'Los Angeles' 
-     } ,{ 
-       firstName : 'John Doe' , 
-       departments : 'Developer' , 
-      city : 'San Francisco' ,
-     } , 
-     { 
-       firstName : 'Jane Doe' , 
-       departments : 'Designer' , 
-       city : 'Los Angeles' 
-     } ,{ 
-       firstName : 'John Doe' , 
-       departments : 'Developer' , 
-      city : 'San Francisco' ,
-     } , 
-     { 
-       firstName : 'Jane Doe' , 
-       departments : 'Designer' , 
-       city : 'Los Angeles' 
-     } ,{ 
+const data = [
+  { 
       firstName : 'John Doe' , 
       departments : 'Developer' , 
      city : 'San Francisco' ,
@@ -191,6 +66,16 @@ const dispatch = useDispatch();
      departments : 'Designer' , 
      city : 'Los Angeles' 
    } ,{ 
+     firstName : 'John Doe' , 
+     departments : 'Developer' , 
+    city : 'San Francisco' ,
+   } , 
+   { 
+     firstName : 'Jane Doe' , 
+     departments : 'Designer' , 
+     city : 'Los Angeles' 
+   } ,
+   { 
     firstName : 'John Doe' , 
     departments : 'Developer' , 
    city : 'San Francisco' ,
@@ -199,44 +84,43 @@ const dispatch = useDispatch();
     firstName : 'Jane Doe' , 
     departments : 'Designer' , 
     city : 'Los Angeles' 
-  } ,
+  } ,{ 
+    firstName : 'John Doe' , 
+    departments : 'Developer' , 
+   city : 'San Francisco' ,
+  } , 
   { 
-   firstName : 'John Doe' , 
-   departments : 'Developer' , 
-  city : 'San Francisco' ,
- } , 
- { 
-   firstName : 'Jane Doe' , 
-   departments : 'Designer' , 
-   city : 'Los Angeles' 
- } ,{ 
-   firstName : 'John Doe' , 
-   departments : 'Developer' , 
-  city : 'San Francisco' ,
- } , 
- { 
-   firstName : 'Jane Doe' , 
-   departments : 'Designer' , 
-   city : 'Los Angeles' 
- } ,{ 
-   firstName : 'John Doe' , 
-   departments : 'Developer' , 
-  city : 'San Francisco' ,
- } , 
- { 
-   firstName : 'Jane Doe' , 
-   departments : 'Designer' , 
-   city : 'Los Angeles' 
- } ,{ 
-   firstName : 'John Doe' , 
-   departments : 'Developer' , 
-  city : 'San Francisco' ,
- } , 
- { 
-   firstName : 'Jane Doe' , 
-   departments : 'Designer' , 
-   city : 'Los Angeles' 
- } ,{ 
+    firstName : 'Jane Doe' , 
+    departments : 'Designer' , 
+    city : 'Los Angeles' 
+  } ,{ 
+    firstName : 'John Doe' , 
+    departments : 'Developer' , 
+   city : 'San Francisco' ,
+  } , 
+  { 
+    firstName : 'Jane Doe' , 
+    departments : 'Designer' , 
+    city : 'Los Angeles' 
+  } ,{ 
+    firstName : 'John Doe' , 
+    departments : 'Developer' , 
+   city : 'San Francisco' ,
+  } , 
+  { 
+    firstName : 'Jane Doe' , 
+    departments : 'Designer' , 
+    city : 'Los Angeles' 
+  } ,{ 
+    firstName : 'John Doe' , 
+    departments : 'Developer' , 
+   city : 'San Francisco' ,
+  } , 
+  { 
+    firstName : 'Jane Doe' , 
+    departments : 'Designer' , 
+    city : 'Los Angeles' 
+  } ,{ 
    firstName : 'John Doe' , 
    departments : 'Developer' , 
   city : 'San Francisco' ,
@@ -246,12 +130,116 @@ const dispatch = useDispatch();
    departments : 'Designer' , 
    city : 'Los Angeles' 
  } ,
+ { 
+  firstName : 'John Doe' , 
+  departments : 'Developer' , 
+ city : 'San Francisco' ,
+} , 
+{ 
+  firstName : 'Jane Doe' , 
+  departments : 'Designer' , 
+  city : 'Los Angeles' 
+} ,{ 
+  firstName : 'John Doe' , 
+  departments : 'Developer' , 
+ city : 'San Francisco' ,
+} , 
+{ 
+  firstName : 'Jane Doe' , 
+  departments : 'Designer' , 
+  city : 'Los Angeles' 
+} ,{ 
+  firstName : 'John Doe' , 
+  departments : 'Developer' , 
+ city : 'San Francisco' ,
+} , 
+{ 
+  firstName : 'Jane Doe' , 
+  departments : 'Designer' , 
+  city : 'Los Angeles' 
+} ,{ 
+  firstName : 'John Doe' , 
+  departments : 'Developer' , 
+ city : 'San Francisco' ,
+} , 
+{ 
+  firstName : 'Jane Doe' , 
+  departments : 'Designer' , 
+  city : 'Los Angeles' 
+} ,{ 
+  firstName : 'John Doe' , 
+  departments : 'Developer' , 
+ city : 'San Francisco' ,
+} , 
+{ 
+  firstName : 'Jane Doe' , 
+  departments : 'Designer' , 
+  city : 'Los Angeles' 
+} ,{ 
+ firstName : 'John Doe' , 
+ departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+ firstName : 'Jane Doe' , 
+ departments : 'Designer' , 
+ city : 'Los Angeles' 
+} ,
+{ 
+firstName : 'John Doe' , 
+departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+firstName : 'Jane Doe' , 
+departments : 'Designer' , 
+city : 'Los Angeles' 
+} ,{ 
+firstName : 'John Doe' , 
+departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+firstName : 'Jane Doe' , 
+departments : 'Designer' , 
+city : 'Los Angeles' 
+} ,{ 
+firstName : 'John Doe' , 
+departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+firstName : 'Jane Doe' , 
+departments : 'Designer' , 
+city : 'Los Angeles' 
+} ,{ 
+firstName : 'John Doe' , 
+departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+firstName : 'Jane Doe' , 
+departments : 'Designer' , 
+city : 'Los Angeles' 
+} ,{ 
+firstName : 'John Doe' , 
+departments : 'Developer' , 
+city : 'San Francisco' ,
+} , 
+{ 
+firstName : 'Jane Doe' , 
+departments : 'Designer' , 
+city : 'Los Angeles' 
+} ,
 
- ]
-  
- console.log(data)
-  
+]
 
+
+ 
+  
+ 
+  
+ const Header = ["firstname", "lastName", "start date", "department", "birthdate","Street","City","state","zip Code","removeEmployee" ];
 
     
     const columns = [
@@ -277,7 +265,7 @@ const dispatch = useDispatch();
             title: "department",
             dataIndex: 'departments',
             key: "departments",
-            width: 100,
+            width: 200,
         },
         {
             title: "birthdate",
@@ -310,22 +298,21 @@ const dispatch = useDispatch();
         },
        
       ];
-   return (
-      <div className="containers">
-        <img src={Logo} alt="logo" style={{ borderRadius: "50%", height: "155px", width:'155px',objectFit:'fit', paddingLeft: '5px', }}/>
-        <Table
-      columns={columns}
-      data={data}
-      tableLayout="auto"
-      
-    />
-    <div>
-     
-    </div>
+      const App = () =>
+      <div>
+         <img src={Logo} alt="logo" />
+          <TablePagination
+              title="Employee List"
+              headers={ Header }
+              data={ data }
+              columns="firstName.lastName.startDate.departments.birthDate.street.city.states.zipcode.remove"
+              perPageItemCount={ 15 }
+              totalCount={ data.length }
+              
+              partialPageCount={3}
+          />
       </div>
-    );
-  };
-  export default Display;      
+  export default App;      
     
       
       

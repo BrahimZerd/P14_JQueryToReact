@@ -6,7 +6,7 @@ function HeaderCEmployee() {
     return(
     <div className='logo' id="header">
         
-        <img src={Wealth} alt='logo' />
+        
         
         
             <div>

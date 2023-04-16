@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import Modal from 'modal-weather/dist/components/modal'
 import { useState } from 'react';
 import {createEmployee} from '../features/employees/Employee';
+import slider from '../features/sliderEmployee/sliderCreateEmployee';
 
 function CreateEmployee() {
   const [modalOpen, SetModal] = useState(false)
@@ -36,7 +37,7 @@ function CreateEmployee() {
 
     
   }
-
+  
   return (
     modalOpen ? 
     
