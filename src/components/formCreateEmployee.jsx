@@ -1,13 +1,19 @@
-import { useDispatch } from 'react-redux';
-import { usestates } from 'react';
-import {createEmployee} from '../features/employees/Employee';
+import { useState } from 'react';
 import Picker from '../features/datepicker/datePickerBirthDate';
 import PickerStartDate from '../features/datepicker/datePickerStartDate';
 import DropDownstates from '../features/dropdown/dropdownStates';
 import DropDowndepartment from '../features/dropdown/dropdownDepartment'
-
+import validate from '../features/validatForm/validationForm';
 function Form({onClk}) {
-    
+
+
+  
+
+
+
+
+
+ 
     
 
    
@@ -20,6 +26,7 @@ function Form({onClk}) {
           <div className='divFirstName'>
           <label htmlFor="first-name">First Name</label>
           <input type="text" id="first-name" name="firstName" /*required*//>
+          
           </div>
           <div className='lastName'>
           <label htmlFor="last-name">Last Name</label>

@@ -286,7 +286,10 @@ button:hover {
 
 
 img {
-  background-color: rgb(199, 228, 228);
+  width: 80px;
+  right: 10%;
+  top: 7%;
+  z-index: 10;
   position: absolute;
   
 }

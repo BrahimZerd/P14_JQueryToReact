@@ -4,19 +4,21 @@ import Form from '../components/formCreateEmployee';
 import '../App.css';
 import { useDispatch } from 'react-redux'
 import Modal from 'modal-weather/dist/components/modal'
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import {createEmployee} from '../features/employees/Employee';
-import slider from '../features/sliderEmployee/sliderCreateEmployee';
-
 function CreateEmployee() {
   const [modalOpen, SetModal] = useState(false)
+  const [firstNameValid, SetFirstName] = useState(false)
   const dispatch = useDispatch();
+  const error = {};
   function closeModal() {
       SetModal(false)
       
     
   }
-  function submitEmployee() {
+  function submitEmployee(e) {
+    
+    e.preventDefault()
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
     const birthDate = document.getElementById('birthDate').value
@@ -26,14 +28,19 @@ function CreateEmployee() {
     const zipcode = document.getElementById('zip-code').value;
     const city= document.getElementById('city').value;
     const departments = document.getElementsByClassName('Dropdown-root departments')[0].innerText;
-    dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
+    
+    
+    firstName < 2  ? error.firstName = 'Required with at least 2 characteres' :  error.firstName = 'Required with at least 2 characteres';
+    
+    /*dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
+    
 
 
     SetModal(true)
     setTimeout(() => {
     document.getElementById('modal').classList.add('modal-open')
-    document.getElementById('modalOverlay').style.display ="block"
-  },)
+    document.getElementById('modalOverlay').style.display ="block"*
+  },)*/
 
     
   }
@@ -46,12 +53,13 @@ function CreateEmployee() {
         <Modal
         
         className={'modal'}
-        style={{opacity: '100',}}
+        style={{opacity: '100',color: "black"}}
         text={"Employee Successfully Created !"}
         close={closeModal}/>
       
       
       <HeaderCEmployee />
+      <span>{error.firstName}</span>
       <Form 
       onClk = {submitEmployee}
 
@@ -70,6 +78,8 @@ function CreateEmployee() {
    </div> 
    <div>       
   <HeaderCEmployee />
+  
+  
   <Form 
   onClk = {submitEmployee}
 

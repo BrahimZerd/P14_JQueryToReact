@@ -1,6 +1,6 @@
 import React from 'react';
 import TableDisplayEmployee from '../components/tableDisplayEmployee'
-import { getEmploye } from '../features/employees/Employee';
+import { getEmploye } from '../Slices/employees/Employee';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 

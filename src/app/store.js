@@ -1,9 +1,7 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {combineReducers} from "redux"; 
-import Employee from '../features/employees/Employee.js';
-
+import Employee from '../Slices/employees/Employee.js';
 const reducer = combineReducers({
- //...     
  data: Employee ,
 });
 
