@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 function CreateEmployee() {
   const [modalOpen, SetModal] = useState(false)
-  const [firstNameValid, SetFirstName] = useState(false)
   const dispatch = useDispatch();
   const error = {};
   function closeModal() {
@@ -30,7 +29,7 @@ function CreateEmployee() {
     const departments = document.getElementsByClassName('Dropdown-root departments')[0].innerText;
     
     
-    firstName < 2  ? error.firstName = 'Required with at least 2 characteres' :  error.firstName = 'Required with at least 2 characteres';
+    
     
     /*dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
     

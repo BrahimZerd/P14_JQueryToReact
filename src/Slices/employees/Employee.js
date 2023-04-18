@@ -15,7 +15,11 @@ export const createData = createSlice({
      
       
       
-    }}
+    },
+   
+  }
+
+
 })
 
 export const createEmployee = (arg) => async dispatch => {

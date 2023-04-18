@@ -9,7 +9,7 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 const PickerBirthDate = () => {
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <DatePicker id={"birthDate"} selected={startDate} onChange={(date) => setStartDate(date)} />
+    <DatePicker id={"birthDate"} name='dataofbirth' selected={startDate} onChange={(date) => setStartDate(date)} />
   );
 };
 
