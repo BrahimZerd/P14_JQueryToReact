@@ -59,6 +59,10 @@ h2 {
   flex-direction: column;
 }
 
+#modal button {
+  margin: 0 auto;
+}
+
 #modalOverlay.modal-open #modal {
   opacity:1;
   top:50%;
@@ -68,13 +72,12 @@ input {
   background-color: rgb(218, 208, 208);
   border-radius: 15px;
   height: 25px;
+  border: solid 2px .4;
+  width: 250px
 }
 #create-employee {
-  margin-left: 5%;
-  margin-top: 7%;
-  display: flex;
-  align-items: center;
-  
+  justify-content: space-between;
+  margin: 0 auto;
   
 
 }
@@ -86,7 +89,10 @@ label {
   border-radius: 5px;
   height: 25px;
   line-height: 5px;
-  width: 150px;
+  width: 250px;
+}
+.Dropdown-menu {
+  width: 250px;
 }
 .Dropdown-arrow {
   top: 11px;
@@ -118,19 +124,20 @@ a {
 .formulaireDiv{
   background-color: rgb(36, 160, 160);
   display: flex;
-  border-radius: 25px;
-  width: 70%;
+  height: 600px;
+  
+ 
   margin: 0 auto;
 }
 
 button
 {
   color: teal;
-  border-radius: 25px;
+
   border: solid 1px;
   width: 150px;
   height: 25px;
-  margin: 55px auto;
+  
   box-shadow: 4px  2px teal;
 
 }
@@ -171,19 +178,18 @@ button:hover {
 .divFirstName, .lastName,.birthDate,.startdate,.departmentDiv {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  margin-top: 5%;
+ 
   padding-left: 2% ;
   padding-right: 2%;
   align-items: center;
   border: solid 1px rgb(91, 196, 196);
+  width: 300px;
   border-radius: 5px;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
 }
 .departmentDiv{
-  margin-top: 5%;
-  margin-bottom: 5%;
-
-  margin-left: 55%;
+  margin: 0 auto;
 }
 .react-pagination-table__title,
 .react-pagination-table__sub-title {
@@ -199,7 +205,7 @@ button:hover {
   align-items: center;
   display: flex;
   justify-content:space-between ;
-  margin-left: 28%;
+  
   padding: 25px;
   width: 100%;
 
@@ -209,7 +215,7 @@ button:hover {
   display: flex;
   text-align: center;
   flex-direction: column;
-  color:white;
+  
   
   
 }
@@ -224,11 +230,12 @@ button:hover {
 }
 .states {
  
- width: 85px;
+ width: 180px;
 
 }
 #submit {
-  margin-left: 67% ;
+  margin: 0 auto;
+  margin-bottom: 2%;
 
 }
 .react-pagination-table__header {
@@ -283,7 +290,10 @@ button:hover {
   border-color: #d0d0d0;
   background-color: #fff;
 }
-
+.invalid-input{
+  border: solid 2px red;
+  
+}
 
 img {
   width: 80px;
@@ -293,43 +303,52 @@ img {
   position: absolute;
   
 }
-table {
-margin: 0 auto;
-
+.DataTable__container{
+  color: black;
 }
 
-td {
-  width: 100px;
-  font-weight: 700;
-  padding: 15px;
+
+.DataTable__buttons-container button {
+  width: 10.5%;
+  height: 20%;
+  border-radius: 50%;
+}
+
+
+.DataTable__head {
+  
+margin-top: 15%;
+}
+
+.DataTable__container {
+  padding: 5%;
+}
+.ShowEntries select {
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
+.QuerySearch__inputs-wrapper{
+  margin-bottom: 25px;
+}
+
+.QuerySearch__inputs-wrapper input {
+  width: 60%;
+  margin-left: 25px;
+}
+button {
+  padding-right: 17px;
+}
+
+.PaginationIndex  button {
+  line-height: 0px;
+  margin-left: 2%;
+  width: 60px;
+}
+.PaginationIndex {
+ margin: 0 auto;
+}
+
+td{
   text-align: center;
-  color: white;
-}
-
-
-tr::after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 100%;
-  left: 0;
-  border: solid 1px rgb(91, 196, 196);
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  color: white;
-}
-
-.pagination-status button{
-  width: 50px;
-  margin: 20px;
-  line-height: 5px;
-}
-
-.pagination-status {
-  display: flex;
-  justify-content: center;
 }

@@ -31,15 +31,15 @@ function CreateEmployee() {
     
     
     
-    /*dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
+    /*dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))*/
     
 
 
     SetModal(true)
     setTimeout(() => {
     document.getElementById('modal').classList.add('modal-open')
-    document.getElementById('modalOverlay').style.display ="block"*
-  },)*/
+    document.getElementById('modalOverlay').style.display ="block"
+  },)
 
     
   }

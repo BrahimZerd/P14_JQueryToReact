@@ -10,7 +10,8 @@ import { setErrors } from '../Slices/ValidationForm';
 function Form({onClk}) {
 
 
-  const {  errors } = useSelector((state) => state.form);
+  const  errors  = useSelector((state) => state.form.errors);
+  const inputs = useSelector(state => state.form.inputs);
 
 
   const dispatch = useDispatch();
@@ -19,17 +20,17 @@ function Form({onClk}) {
     const { name, value } = event.target;
     dispatch(setInput({ name, value }));
     if (value.length < 2) {
-      dispatch(setErrors({ name, error: `${name} must be at least 2 characters long` }));
+      dispatch(setErrors({ name, error: `must contain at least 2 letters` }));
     } else {
       dispatch(setErrors({ name, error: '' }));
     }
-   
+   };
+
+  const inputClass = (name) => {
     
-    console.log(errors)
-    console.log(name)
+    return errors[name] ? 'invalid-input' : '';
   };
-
-
+  const disabledButton = Object.values(errors).some(error => error !== '');
 
 
 
@@ -43,19 +44,19 @@ function Form({onClk}) {
     
       <div className='formulaireDiv'>
         <form action="#" id="create-employee"  style={{display: "flex", flexDirection:"column"}}>
-        <div style={{display: "flex",  flexDirection:"initial"}}>
-          <div className='divFirstName'>
+        <div style={{display: "flex",  flexDirection:"initial", width:'100%'}}>
+          <div className="divFirstName">
           <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" name="firstname" onChange={handleInputChange} /*required*//>
-          {errors.firstname && <span style={{color:'red'}} >{errors.firstname}</span>}
+          <input type="text" id="first-name" name="firstname" onChange={handleInputChange} className={inputClass('firstname')} /*required*//>
+          {errors.firstname && <span style={{color:'red', whiteSpace:'nowrap'}} >{errors.firstname}</span>}
 
           </div>
           
           <div className='lastName'>
           
           <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" name="lastname"  onChange={handleInputChange} /*required*/ />
-          {errors.lastname && <span>{errors.lastname}</span>}
+          <input type="text" id="last-name" name="lastname"  onChange={handleInputChange} className={inputClass('lastname')} /*required*/ />
+          {errors.lastname && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.lastname}</span>}
           </div>
           
           <div className='birthDate'>
@@ -77,13 +78,13 @@ function Form({onClk}) {
                     <legend>Address</legend>
                     <div className='street'>
                     <label htmlFor="street">Street</label>
-                    <input id="street" type="text" name="street" onChange={handleInputChange}/*required*//>
-                    {errors.street && <span style={{color: 'red'}}>{errors.street}</span>}
+                    <input id="street" type="text" name="street" onChange={handleInputChange} className={inputClass('street')}/*required*//>
+                    {errors.street && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.street}</span>}
                     </div>
                     <div className="city">
                     <label htmlFor="city">City</label>
-                    <input id="city" type="text" name='city' onChange={handleInputChange} /*required*/ />
-                    {errors.city && <span style={{color: 'red'}}>{errors.city}</span>}
+                    <input id="city" type="text" name='city' onChange={handleInputChange} className={inputClass('city')}/*required*/ />
+                    {errors.city && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.city}</span>}
                     </div>
                     
                     <div className="states">
@@ -100,7 +101,7 @@ function Form({onClk}) {
             </fieldset>
             </div>  
             
-        <button id="submit" onClick={onClk} >Create Employee</button>
+        <button id="submit" disabled={disabledButton} onClick={onClk} >Create Employee</button>
                 
     </form>
         
