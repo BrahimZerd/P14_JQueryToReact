@@ -1,27 +1,21 @@
-import { useDispatch } from "react-redux";
 import Logo from '../assets/wealth.png'
-import { render } from 'react-dom';
 import React from 'react';
 import { DataTable } from '@lephenix47/react-datatable';
-import data from '../data.json'
+import { useSelector } from 'react-redux';
 
 
 
-console.log(data)
+const TableP = ()  =>{
+
+const data = useSelector((state) => state.data)
 
 
- 
-  
- 
-  
-
-    
-    
-      const TableP = () =>
+      return(
       <div>
-          <DataTable
+        <img src={Logo} alt='logo' />
+          <DataTable 
               data={data} 
-              title="Employee List" 
+              
               filter
               sort
               paging
@@ -31,7 +25,8 @@ console.log(data)
               
           />
           
-      </div>
+      </div>)
+      }
   export default TableP;      
     
       

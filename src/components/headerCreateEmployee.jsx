@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import Wealth from '../assets/wealth.png'
 
 
-function HeaderCEmployee() {
+ const HeaderCEmployee = () => {
     return(
     <div className='logo' id="header">
         

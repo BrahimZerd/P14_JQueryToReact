@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {useDispatch} from 'react-redux'
 import { useSelector } from 'react-redux';
 import Picker from '../features/datepicker/datePickerBirthDate';
@@ -11,7 +10,6 @@ function Form({onClk}) {
 
 
   const  errors  = useSelector((state) => state.form.errors);
-  const inputs = useSelector(state => state.form.inputs);
 
 
   const dispatch = useDispatch();
@@ -24,6 +22,7 @@ function Form({onClk}) {
     } else {
       dispatch(setErrors({ name, error: '' }));
     }
+    
    };
 
   const inputClass = (name) => {
@@ -47,7 +46,7 @@ function Form({onClk}) {
         <div style={{display: "flex",  flexDirection:"initial", width:'100%'}}>
           <div className="divFirstName">
           <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" name="firstname" onChange={handleInputChange} className={inputClass('firstname')} /*required*//>
+          <input type="text" id="first-name" name="firstname" onChange={handleInputChange} className={inputClass('firstname')} required/>
           {errors.firstname && <span style={{color:'red', whiteSpace:'nowrap'}} >{errors.firstname}</span>}
 
           </div>
@@ -55,7 +54,7 @@ function Form({onClk}) {
           <div className='lastName'>
           
           <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" name="lastname"  onChange={handleInputChange} className={inputClass('lastname')} /*required*/ />
+          <input type="text" id="last-name" name="lastname"  onChange={handleInputChange} className={inputClass('lastname')} required />
           {errors.lastname && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.lastname}</span>}
           </div>
           
@@ -78,12 +77,12 @@ function Form({onClk}) {
                     <legend>Address</legend>
                     <div className='street'>
                     <label htmlFor="street">Street</label>
-                    <input id="street" type="text" name="street" onChange={handleInputChange} className={inputClass('street')}/*required*//>
+                    <input id="street" type="text" name="street" onChange={handleInputChange} className={inputClass('street')}required/>
                     {errors.street && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.street}</span>}
                     </div>
                     <div className="city">
                     <label htmlFor="city">City</label>
-                    <input id="city" type="text" name='city' onChange={handleInputChange} className={inputClass('city')}/*required*/ />
+                    <input id="city" type="text" name='city' onChange={handleInputChange} className={inputClass('city')}required />
                     {errors.city && <span style={{color:'red', whiteSpace:'nowrap'}}>{errors.city}</span>}
                     </div>
                     
@@ -95,13 +94,13 @@ function Form({onClk}) {
                     <div className="zip">
 
                     <label htmlFor="zip-code">Zip Code</label>
-                    <input id="zip-code" type="number" min="2"name='zipcode' onChange={handleInputChange} /*required*//>
-                    {errors.zipcode && <span style={{color: 'red'}}>{errors.zipcode}</span>}
+                    <input id="zip-code" type="text" min="2"name='zipcode' onChange={handleInputChange} required/>
+                    {errors.zipcode && <span style={{color: 'red', whiteSpace:'nowrap'}}>{errors.zipcode}</span>}
                     </div>
             </fieldset>
             </div>  
             
-        <button id="submit" disabled={disabledButton} onClick={onClk} >Create Employee</button>
+        <button id="submit"  disabled={disabledButton} onClick={onClk} >Create Employee</button>
                 
     </form>
         

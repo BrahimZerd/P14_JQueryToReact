@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getApi from '../../service/API';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
 export const createData = createSlice({

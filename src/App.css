@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');*/
 
 .App {
   text-align: center;
@@ -10,7 +10,8 @@
 body{
   background-color: rgb(229, 250, 255);
   z-index: 0;
-  color:white;
+  color:black;
+  font-weight: 600;
   
 }
 
@@ -73,7 +74,8 @@ input {
   border-radius: 15px;
   height: 25px;
   border: solid 2px .4;
-  width: 250px
+  width: 250px;
+  text-align: center;
 }
 #create-employee {
   justify-content: space-between;
@@ -112,17 +114,14 @@ a:hover {
   margin-right: 50px;
   margin-left: 50px;
 }
-img {
-  width: 150px;
-  
-}
+
 a {
   color: black;
   text-decoration: none;
 }
 
 .formulaireDiv{
-  background-color: rgb(36, 160, 160);
+  background-color: rgb(224, 245, 210);
   display: flex;
   height: 600px;
   
@@ -238,67 +237,18 @@ button:hover {
   margin-bottom: 2%;
 
 }
-.react-pagination-table__header {
-  background: teal;
-}
 
-.react-pagination-table__table {
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-}
-
-.pagination-status {
-  display: inline-block;
-  padding-left: 0;
-  margin: 20px 0;
-}
-
-.pagination-status__item {
-  display: inline;
-}
-
-.pagination-status .pagination-status__btn {
-  position: relative;
-  float: left;
-  padding: 6px 12px;
-  margin-left: -1px;
-  color: teal;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-.pagination-status .pagination-status__btn:focus {
-  outline: none;
-}
-
-.pagination-status .pagination-status__btn--active,
-.pagination-status .pagination-status__btn:hover {
-  color: #fff;
-  background-color: rgb(91, 196, 196);
-  border-color: teal;
-  cursor: pointer;
-}
-
-.pagination-status .pagination-status__btn--disable,
-.pagination-status .pagination-status__btn--disable:hover {
-  color: #d0d0d0;
-  cursor: default;
-  border-color: #d0d0d0;
-  background-color: #fff;
-}
 .invalid-input{
   border: solid 2px red;
   
 }
-
+caption {
+  margin-top: 2%;
+}
 img {
-  width: 80px;
-  right: 10%;
-  top: 7%;
+  width: 130px;
+  right: 47%;
+  top: 4%;
   z-index: 10;
   position: absolute;
   
@@ -309,14 +259,25 @@ img {
 
 
 .DataTable__buttons-container button {
-  width: 10.5%;
-  height: 20%;
-  border-radius: 50%;
+  width:20px;
+  position: absolute;
+  
+}
+.DataTable__head-button-normal {
+  left: 35%;
+  top: 2px;
+}
+.DataTable__head-button-reverse {
+right: 35%;
+top: 2px;
+}
+.DataTable__buttons-container{
+  position: relative;
+
 }
 
-
 .DataTable__head {
-  
+  height: 100px;
 margin-top: 15%;
 }
 

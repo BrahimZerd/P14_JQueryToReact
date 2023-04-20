@@ -4,24 +4,23 @@ import Form from '../components/formCreateEmployee';
 import '../App.css';
 import { useDispatch } from 'react-redux'
 import Modal from 'modal-weather/dist/components/modal'
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
-function CreateEmployee() {
+import { createEmployee } from '../Slices/Employee';
+const CreateEmployee =()=> {
   const [modalOpen, SetModal] = useState(false)
   const dispatch = useDispatch();
-  const error = {};
-  function closeModal() {
+  const closeModal = () => {
       SetModal(false)
       
     
   }
-  function submitEmployee(e) {
+  const submitEmployee =(e)=> {
     
     e.preventDefault()
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
-    const birthDate = document.getElementById('birthDate').value
-    const startDate = document.getElementById('startDate').value
+    const birthDate = document.getElementById('date-of-birth').value
+    const startDate = document.getElementById('start-date').value
     const street = document.getElementById('street').value
     const states = document.getElementsByClassName('Dropdown-root states')[0].innerText;
     const zipcode = document.getElementById('zip-code').value;
@@ -31,15 +30,15 @@ function CreateEmployee() {
     
     
     
-    /*dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))*/
+    dispatch(createEmployee({firstName,lastName,birthDate,startDate,street,states,city,zipcode,departments}))
     
 
 
     SetModal(true)
-    setTimeout(() => {
+   setTimeout(() => {
     document.getElementById('modal').classList.add('modal-open')
-    document.getElementById('modalOverlay').style.display ="block"
-  },)
+    document.getElementById('modalOverlay').style.display ="block"},)
+
 
     
   }
@@ -58,7 +57,7 @@ function CreateEmployee() {
       
       
       <HeaderCEmployee />
-      <span>{error.firstName}</span>
+      
       <Form 
       onClk = {submitEmployee}
 
