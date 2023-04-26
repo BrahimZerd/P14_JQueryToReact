@@ -1,7 +1,7 @@
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-
+/** @function dropDowndepartment use a npm framework who display a dropdown with the departments services */
 function dropDowndepartment () {
 
     const datadepartments = ['Marketing', 'Engineering', 'Human Resources', 'Legal'];    

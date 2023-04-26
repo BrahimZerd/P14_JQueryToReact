@@ -1,6 +1,7 @@
 import Dropdown from 'react-dropdown';
 import dropdownData from '../../assets/dropdownData';
 
+/** @function DropDownstates use a npm framework who display a dropdown with the states of the US */
 
 
 const DropDownstates =() => {

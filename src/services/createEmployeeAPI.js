@@ -1,6 +1,6 @@
 
 
-
+/** @function createEmployeeAPI function link to the data to use the dispatch mecanism with a fetch */
 async function createEmployeeAPI(newEmployee) {
   
   const promise =  await fetch('data.json')

@@ -25,6 +25,20 @@ h2 {
   position: relative;
   left: 32%;
 }
+.home {
+  display: block;
+ right: 5%;
+ top: 8%;
+ width: 150px;
+  text-align: center;
+  position: absolute;
+  text-decoration: underline;
+  font-style: oblique;
+  
+}
+.QuerySearch__reset-button {
+  display: none;
+}
 .container {
   background-color: rgb(229, 250, 255);
   border-radius: 15px;

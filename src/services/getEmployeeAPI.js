@@ -1,7 +1,8 @@
 
 
-const initialState = {}
 
+
+/** @function getDataAPI function link to the data to use the dispatch mecanism with a fetch */
 
 export  async function getDataAPI() {
     

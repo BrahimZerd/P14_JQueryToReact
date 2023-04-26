@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+/**@param {arg} async function to get an object which contain the new Employee */
+/** @function addEmployee is a reducer to push to the state the new employee */
 
 export const createData = createSlice({
     name: "createData",

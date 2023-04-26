@@ -6,6 +6,10 @@ import { useDispatch } from 'react-redux'
 import Modal from 'modal-weather/dist/components/modal'
 import { useState } from 'react';
 import { createEmployee } from '../Slices/Employee';
+
+/** @const CreateEmployee is the page with the function to submit the input values and display the modal, also dispatching to create Employee */
+
+
 const CreateEmployee =()=> {
   const [modalOpen, SetModal] = useState(false)
   const dispatch = useDispatch();

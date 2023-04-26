@@ -1,6 +1,6 @@
 
 
-
+/** @function getApi is a useless fonction in production dev, used to show the data with mocked data and using the pagination */
 
 async function getApi () {
 

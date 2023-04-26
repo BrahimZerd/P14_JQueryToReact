@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+/** @const setInput catch the value  of the input to store it and name it with his name property */
+/** @const setErrors is using to display when the input value do not correspond at what we want and change element */
+/** @const resetForm is use to reset the form values */
 const initialState = {
   inputs: {
     firstname: '',

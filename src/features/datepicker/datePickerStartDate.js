@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 
 
 
+/** @const PickerStartDate is using a framework from npm to display a picker to catch the date */
 
 const PickerStartDate = () => {
   const [startDate, setStartDate] = useState(new Date());

@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 // CSS Modules, react-datepicker-cssmodules.css
 ;
-
+/** @const PickerBirthDate is using a framework from npm to display a picker to catch the date */
 const PickerBirthDate = () => {
   const [startDate, setStartDate] = useState(new Date());
   return (

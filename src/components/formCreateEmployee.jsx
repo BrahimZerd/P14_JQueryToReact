@@ -6,6 +6,11 @@ import DropDownstates from '../features/dropdown/dropdownStates';
 import DropDowndepartment from '../features/dropdown/dropdownDepartment'
 import { setInput } from '../Slices/ValidationForm';
 import { setErrors } from '../Slices/ValidationForm';
+
+/** @function Form return the form and catch the data in the input from the form to dispatch the new employee */
+/**@param {onClk} is a param to pass the function to submit the new employee from another function to check first the data */
+/**@function handleInputChange get the value from the keyboard to check if an input is use in the wrong way */
+/**@function inputClass is a function to select and display a color when the input is wrong */
 function Form({onClk}) {
 
 
